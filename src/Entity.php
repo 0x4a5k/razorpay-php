@@ -52,6 +52,11 @@ class Entity extends Resource implements ArrayableInterface
         return $className.'s/';
     }
 
+    protected static function camelCase($input)
+    {
+        return str_replace(' ', '', ucwords(str_replace('_', ' ', $input)));
+    }
+
     protected function snakeCase($input)
     {
         $delimiter = '_';
@@ -134,12 +139,15 @@ class Entity extends Resource implements ArrayableInterface
             'order',
             'customer',
             'token',
-            'settlement');
+            'settlement',
+            'contact',
+            'fund_account',
+            'payout');
     }
 
     protected static function getEntityClass($name)
     {
-        return __NAMESPACE__.'\\'.ucfirst($name);
+        return __NAMESPACE__.'\\'.self::camelCase($name);
     }
 
     protected function getEntity()

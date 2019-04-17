@@ -1,5 +1,5 @@
 {
-    "name": "razorpay/razorpay",
+    "name": "0x4a5k/razorpay",
     "description": "Razorpay PHP Client Library",
     "keywords": ["razorpay", "api", "php", "client"],
     "authors": [
